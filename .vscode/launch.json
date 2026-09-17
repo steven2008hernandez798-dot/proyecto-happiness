@@ -1,15 +1,341 @@
-{
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "chrome",
-            "request": "launch",
-            "name": "Launch Chrome against localhost",
-            "url": "http://localhost:8080",
-            "webRoot": "${workspaceFolder}"
-        }
-    ]
+/* --- RESET Y VARIABLES --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-yellow: #fbc02d;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray: #e6e6e6;
+  --color-dark-gray: #1a1a1a;
+  --font-heading: 'Oswald', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: #333333;
+  line-height: 1.5;
+  background-color: var(--color-white);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- ESTILOS DE FUENTE Y BOTONES --- */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  letter-spacing: 1px;
+}
+
+.title-uppercase {
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.title-yellow-text {
+  color: var(--color-yellow);
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 22px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: capitalize;
+  margin-top: 1.2rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn-yellow {
+  background-color: var(--color-yellow);
+  color: var(--color-black);
+}
+
+.btn-black {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.center-btn {
+  margin: 1.5rem auto 0 auto;
+}
+
+.link-dark {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--color-black);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* --- NAVBAR --- */
+.navbar {
+  background-color: var(--color-yellow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 5%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.logo-icon {
+  font-size: 1.2rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-black);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* --- ESTRUCTURA GENERAL DE SECCIONES --- */
+.section {
+  padding: 50px 5%;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.single-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center-text {
+  text-align: center;
+}
+
+/* FONDOS */
+.section-white { background-color: var(--color-white); }
+.section-gray  { background-color: var(--color-gray); }
+.section-yellow{ background-color: var(--color-yellow); }
+.section-black { background-color: var(--color-black); color: var(--color-white); }
+
+/* --- COMPONENTES ESPECÍFICOS --- */
+.col-graphics {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.chart-img {
+  max-width: 140px;
+}
+
+.chart-img-small {
+  max-width: 120px;
+  margin-top: 15px;
+}
+
+.about-img-box {
+  margin: 25px 0;
+  max-width: 600px;
+  width: 100%;
+}
+
+.subtitle-white {
+  max-width: 650px;
+  font-size: 0.85rem;
+  color: #cccccc;
+}
+
+/* FORMULARIO */
+.newsletter-form {
+  background-color: var(--color-black);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.newsletter-form input,
+.newsletter-form textarea {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--color-white);
+  padding: 8px 12px;
+  color: var(--color-white);
+  font-size: 0.8rem;
+}
+
+.newsletter-form input::placeholder,
+.newsletter-form textarea::placeholder {
+  color: #aaaaaa;
+}
+
+.form-terms {
+  color: var(--color-white);
+  font-size: 0.65rem;
+  margin-top: 10px;
+  line-height: 1.2;
+}
+
+/* MAPA */
+.map-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px 0;
+}
+
+/* --- FOOTER --- */
+.footer {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: 40px 5% 20px 5%;
+  font-size: 0.8rem;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto 30px auto;
+}
+
+.footer-columns {
+  display: flex;
+  gap: 40px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.footer-col a {
+  color: var(--color-yellow);
+  text-decoration: none;
+  font-size: 0.75rem;
+}
+
+.footer-divider {
+  border: 0;
+  border-top: 1px solid #333333;
+  margin-bottom: 20px;
+}
+
+.footer-bottom {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #888888;
+  font-size: 0.75rem;
+}
+
+.social-icons a {
+  color: var(--color-yellow);
+  text-decoration: none;
+  margin-left: 10px;
+}
+
+/* ==========================================================
+   MEDIA QUERIES (RESPONSIVE)
+   ========================================================== */
+
+/* 1. DISPOSITIVOS PEQUEÑOS / MÓVILES (Hasta 768px) */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .two-columns {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  /* Cambiar orden visual si es necesario en móvil */
+  .hero-section .col-img {
+    order: -1;
+  }
+
+  .title-uppercase {
+    font-size: 1.8rem;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-columns {
+    gap: 20px;
+  }
+}
+
+/* 2. TABLETS Y PANTALLAS MEDIANAS (769px a 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .section {
+    padding: 40px 3%;
+  }
+
+  .two-columns {
+    gap: 20px;
+  }
+
+  .title-uppercase {
+    font-size: 1.9rem;
+  }
+}
+
+/* 3. PANTALLAS GRANDES / DESKTOP (Más de 1025px) */
+@media screen and (min-width: 1025px) {
+  .container {
+    max-width: 1000px;
+  }
 }
