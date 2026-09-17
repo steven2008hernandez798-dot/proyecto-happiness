@@ -1,0 +1,85 @@
+/* --- RESET Y VARIABLES --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-yellow: #fbc02d;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-gray: #e6e6e6;
+  --color-dark-gray: #1a1a1a;
+  --font-heading: 'Oswald', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  color: #333333;
+  line-height: 1.5;
+  background-color: var(--color-white);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  letter-spacing: 1px;
+}
+
+.title-uppercase {
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.title-yellow-text {
+  color: var(--color-yellow);
+}
+
+.btn {
+  display: inline-block;
+  padding: 8px 22px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: capitalize;
+  margin-top: 1.2rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.btn-yellow {
+  background-color: var(--color-yellow);
+  color: var(--color-black);
+}
+
+.btn-black {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.center-btn {
+  margin: 1.5rem auto 0 auto;
+}
+
+.link-dark {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--color-black);
+  font-weight: bold;
+  text-decoration: none;
+}
