@@ -270,3 +270,58 @@ h1, h2, h3 {
   text-decoration: none;
   margin-left: 10px;
 }
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .two-columns {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+
+  .hero-section .col-img {
+    order: -1;
+  }
+
+  .title-uppercase {
+    font-size: 1.8rem;
+  }
+
+  .footer-top {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .footer-columns {
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .section {
+    padding: 40px 3%;
+  }
+
+  .two-columns {
+    gap: 20px;
+  }
+
+  .title-uppercase {
+    font-size: 1.9rem;
+  }
+}
+
+
+@media screen and (min-width: 1025px) {
+  .container {
+    max-width: 1000px;
+  }
